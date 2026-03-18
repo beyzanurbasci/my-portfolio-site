@@ -41,9 +41,13 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     className="group glass-card rounded-2xl overflow-hidden transition-all duration-300"
   >
     <div className="aspect-video bg-gradient-to-br from-secondary to-card overflow-hidden relative flex items-center justify-center">
-      <span className="text-3xl font-bold text-muted-foreground/10 tracking-tighter select-none">
-        {project.title.slice(0, 2).toUpperCase()}
-      </span>
+      {project.image ? (
+        <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+      ) : (
+        <span className="text-3xl font-bold text-muted-foreground/10 tracking-tighter select-none">
+          {project.title.slice(0, 2).toUpperCase()}
+        </span>
+      )}
       {project.link && (
         <a href={project.link} target="_blank" rel="noopener noreferrer"
           className="absolute top-4 right-4 p-2 rounded-full glass-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"
