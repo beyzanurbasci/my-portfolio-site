@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { fadeIn, fadeInTransition } from "@/lib/animations";
+import topcuHoldingImg from "@/assets/topcu-holding.png";
 
 interface Project {
   title: string;
   description: string;
   tags: string[];
   link?: string;
+  image?: string;
+}
 }
 
 const projects: Project[] = [
