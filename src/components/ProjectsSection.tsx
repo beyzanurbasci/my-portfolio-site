@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { fadeIn, fadeInTransition } from "@/lib/animations";
 import topcuHoldingImg from "@/assets/topcu-holding.png";
+import basciKatlanirImg from "@/assets/basci-katlanir.png";
 
 interface Project {
   title: string;
@@ -20,9 +21,11 @@ const projects: Project[] = [
     image: topcuHoldingImg,
   },
   {
-    title: "E-Ticaret Dashboard",
-    description: "Veri görselleştirme ve envanter yönetimi için geliştirilmiş modern admin paneli.",
-    tags: ["TypeScript", "React", "Recharts"],
+    title: "Başçı Katlanır Cam Sistemleri",
+    description: "Başçı Katlanır Cam Sistemleri için modern, kurumsal kimliği yansıtan ve tam duyarlı bir web sitesi geliştirilmesi.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://bascikatlanir.com/",
+    image: basciKatlanirImg,
   },
   {
     title: "SaaS Landing Page",
