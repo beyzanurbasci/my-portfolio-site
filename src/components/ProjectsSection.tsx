@@ -10,7 +10,6 @@ interface Project {
   link?: string;
   image?: string;
 }
-}
 
 const projects: Project[] = [
   {
@@ -18,6 +17,7 @@ const projects: Project[] = [
     description: "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://www.topcuholding.com/",
+    image: topcuHoldingImg,
   },
   {
     title: "E-Ticaret Dashboard",
