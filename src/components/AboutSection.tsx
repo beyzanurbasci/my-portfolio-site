@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-
-const fadeIn = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-};
+import { fadeIn, fadeInTransition } from "@/lib/animations";
 
 const AboutSection = () => (
   <section id="hakkimda" className="py-24 md:py-32 px-6 max-w-6xl mx-auto">
@@ -20,8 +14,10 @@ const AboutSection = () => (
       </motion.div>
 
       <motion.div
-        {...fadeIn}
-        transition={{ delay: 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ ...fadeInTransition, delay: 0.15 }}
         className="order-1 md:order-2"
       >
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 tracking-tight">

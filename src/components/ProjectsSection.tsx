@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { fadeIn, fadeInTransition } from "@/lib/animations";
 
 interface Project {
   title: string;
@@ -11,36 +12,28 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Topçu Holding Kurumsal Web Sitesi",
-    description:
-      "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
+    description: "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://www.topcuholding.com/",
   },
   {
     title: "E-Ticaret Dashboard",
-    description:
-      "Veri görselleştirme ve envanter yönetimi için geliştirilmiş modern admin paneli.",
+    description: "Veri görselleştirme ve envanter yönetimi için geliştirilmiş modern admin paneli.",
     tags: ["TypeScript", "React", "Recharts"],
   },
   {
     title: "SaaS Landing Page",
-    description:
-      "Yüksek dönüşüm oranlı, modern ve etkileyici bir satış sayfası tasarımı.",
+    description: "Yüksek dönüşüm oranlı, modern ve etkileyici bir satış sayfası tasarımı.",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
   },
 ];
 
-const fadeIn = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-};
-
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <motion.div
-    {...fadeIn}
-    transition={{ delay: index * 0.1, duration: 0.6 }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ ...fadeInTransition, delay: index * 0.1 }}
     whileHover={{ y: -6 }}
     className="group glass-card rounded-2xl overflow-hidden transition-all duration-300"
   >
@@ -49,31 +42,19 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         {project.title.slice(0, 2).toUpperCase()}
       </span>
       {project.link && (
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
+        <a href={project.link} target="_blank" rel="noopener noreferrer"
           className="absolute top-4 right-4 p-2 rounded-full glass-card opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          aria-label="Projeyi Görüntüle"
-        >
+          aria-label="Projeyi Görüntüle">
           <ExternalLink size={16} className="text-foreground" />
         </a>
       )}
     </div>
     <div className="p-6 md:p-8">
-      <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-        {project.title}
-      </h3>
-      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-        {project.description}
-      </p>
+      <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+      <p className="text-muted-foreground text-sm leading-relaxed mb-6">{project.description}</p>
       <div className="flex flex-wrap gap-2">
         {project.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground bg-surface-light px-2.5 py-1 rounded"
-            style={{ background: "hsla(0,0%,100%,0.05)" }}
-          >
+          <span key={tag} className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground px-2.5 py-1 rounded" style={{ background: "hsla(0,0%,100%,0.05)" }}>
             {tag}
           </span>
         ))}
@@ -85,14 +66,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 const ProjectsSection = () => (
   <section id="projeler" className="py-24 md:py-32 px-6 max-w-6xl mx-auto">
     <motion.div {...fadeIn} className="mb-16">
-      <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight">
-        Seçili Projeler
-      </h2>
-      <p className="text-muted-foreground text-sm">
-        Dijital dünyada iz bırakan işler.
-      </p>
+      <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight">Seçili Projeler</h2>
+      <p className="text-muted-foreground text-sm">Dijital dünyada iz bırakan işler.</p>
     </motion.div>
-
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {projects.map((project, i) => (
         <ProjectCard key={project.title} project={project} index={i} />

@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronRight, Download } from "lucide-react";
-
-const fadeIn = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] },
-};
+import { fadeIn } from "@/lib/animations";
 
 const HeroSection = () => (
   <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
@@ -33,29 +27,13 @@ const HeroSection = () => (
       </div>
 
       <div className="flex gap-6">
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-          aria-label="GitHub"
-        >
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="GitHub">
           <Github size={22} />
         </a>
-        <a
-          href="https://www.linkedin.com/in/beyzanur-basci-"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-          aria-label="LinkedIn"
-        >
+        <a href="https://www.linkedin.com/in/beyzanur-basci-" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="LinkedIn">
           <Linkedin size={22} />
         </a>
-        <a
-          href="mailto:hello@beyzanur.com"
-          className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-          aria-label="Email"
-        >
+        <a href="mailto:hello@beyzanur.com" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="Email">
           <Mail size={22} />
         </a>
       </div>
