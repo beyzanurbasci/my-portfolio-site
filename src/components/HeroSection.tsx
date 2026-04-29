@@ -6,7 +6,7 @@ const HeroSection = () => (
   <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
     <motion.div {...fadeIn}>
       <span className="text-primary font-mono text-sm tracking-widest mb-4 block uppercase">
-        Mevcut Durum: Yeni Projelere Açık
+        {" "}
       </span>
       <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter mb-6 leading-[1.05]">
         Merhaba, Ben <br />
