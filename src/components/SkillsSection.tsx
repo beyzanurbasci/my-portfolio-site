@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const skills = [
   "React",
-  "JavaScript",
+  "MVC",
   "TypeScript",
   "HTML / CSS",
   "Tailwind CSS",
