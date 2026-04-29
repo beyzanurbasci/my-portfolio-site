@@ -26,17 +26,6 @@ const AboutSection = () => (
             geliştiriyorum.
           </p>
         </div>
-
-        <div className="grid grid-cols-2 gap-4 mt-8">
-          <div className="p-4 rounded-xl glass-card">
-            <h4 className="text-foreground font-bold text-2xl">4+</h4>
-            <p className="text-muted-foreground text-sm">Yıllık Deneyim</p>
-          </div>
-          <div className="p-4 rounded-xl glass-card">
-            <h4 className="text-foreground font-bold text-2xl">20+</h4>
-            <p className="text-muted-foreground text-sm">Tamamlanan Proje</p>
-          </div>
-        </div>
       </motion.div>
     </div>
   </section>
