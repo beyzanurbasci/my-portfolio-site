@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fadeIn, fadeInTransition } from "@/lib/animations";
+import { fadeInTransition } from "@/lib/animations";
 
 const AboutSection = () => (
   <section id="hakkimda" className="py-24 md:py-32 px-6 max-w-6xl mx-auto">
