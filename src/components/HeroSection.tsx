@@ -10,7 +10,7 @@ const HeroSection = () => (
       </span>
       <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter mb-6 leading-[1.05]">
         Merhaba, Ben <br />
-        <span className="gradient-text">Beyzanur Basci</span>
+        <span className="gradient-text">BEYZANUR BAŞÇI</span>
       </h1>
       <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
         Yazılım Geliştirici &amp; Web Tasarımcı. Modern, kullanıcı dostu ve
