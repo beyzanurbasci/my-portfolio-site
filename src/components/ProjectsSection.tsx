@@ -35,11 +35,6 @@ const projects: Project[] = [
     link: "https://fortisdesigner.com/blog",
     image: fortisBlogImg,
   },
-  {
-    title: "SaaS Landing Page",
-    description: "Yüksek dönüşüm oranlı, modern ve etkileyici bir satış sayfası tasarımı.",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-  },
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
