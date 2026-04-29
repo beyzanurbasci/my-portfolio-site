@@ -3,6 +3,7 @@ import { ExternalLink } from "lucide-react";
 import { fadeIn, fadeInTransition } from "@/lib/animations";
 import topcuHoldingImg from "@/assets/topcu-holding.png";
 import basciKatlanirImg from "@/assets/basci-katlanir.png";
+import fortisBlogImg from "@/assets/fortis-blog.png";
 
 interface Project {
   title: string;
@@ -26,6 +27,13 @@ const projects: Project[] = [
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://bascikatlanir.com/",
     image: basciKatlanirImg,
+  },
+  {
+    title: "Fortis Designer Blog Yönetimi",
+    description: "Fortis Designer blog hesabının içerik yönetimini üstleniyorum. Düzenli olarak SEO uyumlu, kullanıcı odaklı blog yazıları planlıyor ve yayınlıyorum.",
+    tags: ["İçerik Yönetimi", "SEO", "Blog"],
+    link: "https://fortisdesigner.com/blog",
+    image: fortisBlogImg,
   },
   {
     title: "SaaS Landing Page",
