@@ -16,8 +16,11 @@ const HeroSection = () => (
           <span className="gradient-text">BEYZANUR BAŞÇI</span>
         </h1>
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
-          Yazılım Geliştirici &amp; Web Tasarımcı. Modern, kullanıcı dostu ve
-          ölçeklenebilir web uygulamaları geliştiriyorum.
+          Yazılım Mühendisliği öğrencisi olarak, Atık Nakit bünyesinde görüntü
+          işleme ve YOLO modelleri üzerine staj yapıyor, aynı zamanda C# ve
+          ASP.NET ile kurumsal web projeleri geliştirerek teknik uzmanlığımı
+          dijital operasyon yönetimi ve topluluk liderliği tecrübelerimle
+          birleştiriyorum.
         </p>
 
         <div className="flex flex-wrap gap-4 mb-12">
