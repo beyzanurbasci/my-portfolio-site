@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronRight, Download } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronRight, Eye } from "lucide-react";
 import { fadeIn } from "@/lib/animations";
 import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
