@@ -23,9 +23,13 @@ const HeroSection = () => (
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
             Projelerimi Gör <ChevronRight size={18} />
           </a>
-          <button className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm">
+          <a
+            href="/Beyzanur-Basci-CV.pdf"
+            download="Beyzanur-Basci-CV.pdf"
+            className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm"
+          >
             <Download size={18} /> CV İndir
-          </button>
+          </a>
         </div>
 
         <div className="flex gap-6">
