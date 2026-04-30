@@ -1,9 +1,11 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
+const cvPages = ["/cv/page-1.png", "/cv/page-2.png"];
+
 const CVPage = () => (
   <main className="min-h-screen bg-background text-foreground">
-    <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-4 px-4 py-6">
+    <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-4 px-4 py-6">
       <div className="flex items-center justify-between gap-4">
         <Link
           to="/"
@@ -13,11 +15,16 @@ const CVPage = () => (
         </Link>
       </div>
 
-      <iframe
-        title="Beyzanur Başçı CV"
-        src="/Beyzanur-Basci-CV.pdf#toolbar=1&navpanes=0"
-        className="h-[calc(100vh-7rem)] w-full rounded-lg border border-border bg-card"
-      />
+      <div className="flex flex-col gap-6">
+        {cvPages.map((page, index) => (
+          <img
+            key={page}
+            src={page}
+            alt={`Beyzanur Başçı CV sayfa ${index + 1}`}
+            className="w-full rounded-lg border border-border bg-card shadow-2xl"
+          />
+        ))}
+      </div>
     </div>
   </main>
 );
