@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, ChevronRight, Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import { fadeIn } from "@/lib/animations";
 import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
@@ -23,14 +24,12 @@ const HeroSection = () => (
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
             Projelerimi Gör <ChevronRight size={18} />
           </a>
-          <a
-            href="/Beyzanur-Basci-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/cv"
             className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm"
           >
             <Eye size={18} /> CV Görüntüle
-          </a>
+          </Link>
         </div>
 
         <div className="flex gap-6">
