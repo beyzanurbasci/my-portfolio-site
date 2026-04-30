@@ -23,7 +23,7 @@ const ContactSection = () => {
         />
 
         <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2 tracking-tight">
-          Bir projeniz mi var?
+          Benimle iletişime geçin
         </h2>
         <p className="text-muted-foreground text-lg mb-8">Birlikte çalışalım.</p>
 
