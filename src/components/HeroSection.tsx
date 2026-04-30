@@ -25,12 +25,11 @@ const HeroSection = () => (
           </a>
           <a
             href="/Beyzanur-Basci-CV.pdf"
-            download="Beyzanur-Basci-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm"
           >
-            <Download size={18} /> CV İndir
+            <Eye size={18} /> CV Görüntüle
           </a>
         </div>
 
