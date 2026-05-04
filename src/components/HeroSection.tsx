@@ -1,31 +1,114 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronRight, Eye } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronRight, Eye, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
-import { fadeIn } from "@/lib/animations";
 import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
+const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
+  <motion.div
+    className="absolute rounded-full"
+    style={{
+      width: size,
+      height: size,
+      left: `${x}%`,
+      bottom: "-10%",
+      background: `radial-gradient(circle, hsla(340, 85%, 60%, 0.6), transparent)`,
+    }}
+    animate={{
+      y: [0, -800],
+      opacity: [0, 1, 1, 0],
+      scale: [0, 1, 1, 0.5],
+    }}
+    transition={{
+      duration: 8 + Math.random() * 4,
+      delay,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+  />
+);
+
 const HeroSection = () => (
-  <section className="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[90vh] flex flex-col justify-center">
-    <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
-      <motion.div {...fadeIn}>
-        <span className="text-primary font-mono text-sm tracking-widest mb-4 block uppercase">
-          {" "}
-        </span>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter mb-6 leading-[1.05]">
-          Merhaba, Ben <br />
-          <span className="gradient-text">BEYZANUR BAŞÇI</span>
-        </h1>
-        <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+  <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[100vh] flex flex-col justify-center overflow-hidden">
+    {/* Background blobs */}
+    <div className="absolute inset-0 mesh-gradient pointer-events-none" />
+    <div
+      className="absolute top-1/4 -left-32 w-96 h-96 opacity-20 blur-3xl"
+      style={{
+        background: "hsl(340 85% 60%)",
+        animation: "blob-morph 8s ease-in-out infinite",
+      }}
+    />
+    <div
+      className="absolute bottom-1/4 -right-32 w-80 h-80 opacity-15 blur-3xl"
+      style={{
+        background: "hsl(270 80% 65%)",
+        animation: "blob-morph 10s ease-in-out infinite reverse",
+      }}
+    />
+
+    {/* Floating particles */}
+    {[...Array(6)].map((_, i) => (
+      <FloatingParticle key={i} delay={i * 1.5} x={10 + i * 15} size={3 + Math.random() * 4} />
+    ))}
+
+    <div className="relative grid md:grid-cols-[1fr_auto] gap-16 items-center z-10">
+      <div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center gap-2 mb-6"
+        >
+          <Sparkles size={14} className="text-primary" />
+          <span className="text-primary font-mono text-xs tracking-[0.3em] uppercase">
+            Portföy 2026
+          </span>
+        </motion.div>
+
+        <div className="overflow-hidden mb-2">
+          <motion.h1
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.95]"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
+            Merhaba, Ben
+          </motion.h1>
+        </div>
+        <div className="overflow-hidden mb-8">
+          <motion.h1
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95]"
+            style={{ fontFamily: "'Syne', sans-serif" }}
+          >
+            <span className="gradient-text">BEYZANUR</span>
+          </motion.h1>
+        </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="text-muted-foreground text-base md:text-lg max-w-xl mb-10 leading-relaxed"
+        >
           Yazılım Mühendisliği öğrencisi olarak, Atık Nakit bünyesinde görüntü
           işleme ve YOLO modelleri üzerine staj yapıyor, aynı zamanda C# ve
           ASP.NET ile kurumsal web projeleri geliştirerek teknik uzmanlığımı
           dijital operasyon yönetimi ve topluluk liderliği tecrübelerimle
           birleştiriyorum.
-        </p>
+        </motion.p>
 
-        <div className="flex flex-wrap gap-4 mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          className="flex flex-wrap gap-4 mb-12"
+        >
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
-            Projelerimi Gör <ChevronRight size={18} />
+            <span>Projelerimi Gör</span> <ChevronRight size={18} />
           </a>
           <Link
             to="/cv"
@@ -33,35 +116,97 @@ const HeroSection = () => (
           >
             <Eye size={18} /> CV Görüntüle
           </Link>
-        </div>
+        </motion.div>
 
-        <div className="flex gap-6">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="GitHub">
-            <Github size={22} />
-          </a>
-          <a href="https://www.linkedin.com/in/beyzanur-basci-" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="LinkedIn">
-            <Linkedin size={22} />
-          </a>
-          <a href="mailto:hello@beyzanur.com" className="text-muted-foreground hover:text-foreground transition-colors duration-300" aria-label="Email">
-            <Mail size={22} />
-          </a>
-        </div>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          className="flex gap-4"
+        >
+          {[
+            { icon: Github, href: "https://github.com", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/beyzanur-basci-", label: "LinkedIn" },
+            { icon: Mail, href: "mailto:hello@beyzanur.com", label: "Email" },
+          ].map(({ icon: Icon, href, label }) => (
+            <motion.a
+              key={label}
+              href={href}
+              target={label !== "Email" ? "_blank" : undefined}
+              rel={label !== "Email" ? "noopener noreferrer" : undefined}
+              className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:text-primary transition-all duration-300"
+              style={{
+                background: "hsla(0, 0%, 100%, 0.04)",
+                border: "1px solid hsla(0, 0%, 100%, 0.08)",
+              }}
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={label}
+            >
+              <Icon size={18} />
+            </motion.a>
+          ))}
+        </motion.div>
+      </div>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
         className="relative justify-self-center md:justify-self-end"
       >
-        <div className="absolute -inset-4 bg-gradient-to-tr from-primary/30 to-transparent blur-2xl rounded-full" />
+        {/* Animated ring */}
+        <motion.div
+          className="absolute -inset-6 rounded-full"
+          style={{
+            background: "conic-gradient(from 0deg, transparent 60%, hsl(340 85% 60%) 75%, hsl(270 80% 65%) 85%, transparent 100%)",
+            padding: "2px",
+          }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        >
+          <div className="w-full h-full rounded-full bg-background" />
+        </motion.div>
+
+        <div className="absolute -inset-8 bg-gradient-to-tr from-primary/20 via-accent/10 to-transparent blur-3xl rounded-full" />
         <img
           src={beyzanurPortrait}
           alt="Beyzanur Başçı portre"
-          className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full border border-border/40 shadow-2xl"
+          className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl"
+          style={{
+            border: "3px solid hsla(0, 0%, 100%, 0.1)",
+          }}
         />
+
+        {/* Floating badge */}
+        <motion.div
+          className="absolute -bottom-2 -right-2 px-4 py-2 rounded-xl text-xs font-bold"
+          style={{
+            background: "linear-gradient(135deg, hsl(340 85% 60%), hsl(270 80% 65%))",
+            color: "white",
+          }}
+          animate={{ y: [0, -5, 0] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        >
+          🚀 Open to Work
+        </motion.div>
       </motion.div>
     </div>
+
+    {/* Scroll indicator */}
+    <motion.div
+      className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      animate={{ y: [0, 8, 0] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+        <motion.div
+          className="w-1.5 h-1.5 rounded-full bg-primary"
+          animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+      </div>
+    </motion.div>
   </section>
 );
 

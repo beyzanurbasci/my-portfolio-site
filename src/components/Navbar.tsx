@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -19,14 +20,26 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 glass-navbar transition-all duration-300 ${
-        scrolled ? "shadow-lg" : ""
+    <motion.nav
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed top-0 w-full z-50 glass-navbar transition-all duration-500 ${
+        scrolled ? "shadow-lg shadow-black/20" : ""
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-foreground font-bold tracking-tighter text-xl">
-          BB<span className="text-primary">.</span>
+        <a
+          href="#"
+          className="text-foreground font-bold tracking-tighter text-xl relative group"
+          style={{ fontFamily: "'Syne', sans-serif" }}
+        >
+          BB
+          <span className="gradient-text">.</span>
+          <span
+            className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
+            style={{ background: "linear-gradient(90deg, hsl(340 85% 60%), hsl(270 80% 65%))" }}
+          />
         </a>
 
         <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
@@ -34,9 +47,13 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="hover:text-primary transition-colors duration-300"
+              className="relative hover:text-foreground transition-colors duration-300 py-1 group"
             >
               {link.label}
+              <span
+                className="absolute -bottom-0.5 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
+                style={{ background: "hsl(340 85% 60%)" }}
+              />
             </a>
           ))}
         </div>
@@ -45,7 +62,7 @@ const Navbar = () => {
           href="#iletisim"
           className="hidden md:inline-flex btn-primary px-5 py-2 text-xs tracking-wide"
         >
-          İletişime Geç
+          <span>İletişime Geç</span>
         </a>
 
         <button
@@ -57,28 +74,35 @@ const Navbar = () => {
         </button>
       </div>
 
-      {mobileOpen && (
-        <div className="md:hidden glass-navbar border-t border-border px-6 py-4 space-y-3">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="block text-muted-foreground hover:text-primary transition-colors py-2"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#iletisim"
-            onClick={() => setMobileOpen(false)}
-            className="block btn-primary text-center px-5 py-3 text-sm mt-2"
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden glass-navbar border-t border-border px-6 py-4 space-y-3 overflow-hidden"
           >
-            İletişime Geç
-          </a>
-        </div>
-      )}
-    </nav>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block text-muted-foreground hover:text-primary transition-colors py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#iletisim"
+              onClick={() => setMobileOpen(false)}
+              className="block btn-primary text-center px-5 py-3 text-sm mt-2"
+            >
+              <span>İletişime Geç</span>
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
