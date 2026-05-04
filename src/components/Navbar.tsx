@@ -34,11 +34,9 @@ const Navbar = () => {
           className="text-foreground font-bold tracking-tighter text-xl relative group"
           style={{ fontFamily: "'Syne', sans-serif" }}
         >
-          BB
-          <span className="gradient-text">.</span>
+          BB<span className="text-foreground/40">.</span>
           <span
-            className="absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300"
-            style={{ background: "linear-gradient(90deg, hsl(340 85% 60%), hsl(270 80% 65%))" }}
+            className="absolute -bottom-1 left-0 w-0 h-px bg-foreground/30 group-hover:w-full transition-all duration-300"
           />
         </a>
 
@@ -50,19 +48,13 @@ const Navbar = () => {
               className="relative hover:text-foreground transition-colors duration-300 py-1 group"
             >
               {link.label}
-              <span
-                className="absolute -bottom-0.5 left-0 w-0 h-px group-hover:w-full transition-all duration-300"
-                style={{ background: "hsl(340 85% 60%)" }}
-              />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-foreground/50 group-hover:w-full transition-all duration-300" />
             </a>
           ))}
         </div>
 
-        <a
-          href="#iletisim"
-          className="hidden md:inline-flex btn-primary px-5 py-2 text-xs tracking-wide"
-        >
-          <span>İletişime Geç</span>
+        <a href="#iletisim" className="hidden md:inline-flex btn-primary px-5 py-2 text-xs tracking-wide">
+          İletişime Geç
         </a>
 
         <button
@@ -87,7 +79,7 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="block text-muted-foreground hover:text-primary transition-colors py-2"
+                className="block text-muted-foreground hover:text-foreground transition-colors py-2"
               >
                 {link.label}
               </a>
@@ -97,7 +89,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className="block btn-primary text-center px-5 py-3 text-sm mt-2"
             >
-              <span>İletişime Geç</span>
+              İletişime Geç
             </a>
           </motion.div>
         )}

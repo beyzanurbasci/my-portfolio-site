@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import topcuHoldingImg from "@/assets/topcu-holding.png";
 import basciKatlanirImg from "@/assets/basci-katlanir.png";
 import fortisBlogImg from "@/assets/fortis-blog.png";
@@ -10,46 +10,33 @@ interface Project {
   tags: string[];
   link?: string;
   image?: string;
-  accent: string;
 }
 
 const projects: Project[] = [
   {
     title: "Topçu Holding Kurumsal Web Sitesi",
-    description:
-      "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
+    description: "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://www.topcuholding.com/",
     image: topcuHoldingImg,
-    accent: "340 85% 60%",
   },
   {
     title: "Başçı Katlanır Cam Sistemleri",
-    description:
-      "Başçı Katlanır Cam Sistemleri için modern, kurumsal kimliği yansıtan ve tam duyarlı bir web sitesi geliştirilmesi.",
+    description: "Başçı Katlanır Cam Sistemleri için modern, kurumsal kimliği yansıtan ve tam duyarlı bir web sitesi geliştirilmesi.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://bascikatlanir.com/",
     image: basciKatlanirImg,
-    accent: "270 80% 65%",
   },
   {
     title: "Fortis Designer Blog Yönetimi",
-    description:
-      "Fortis Designer blog hesabının içerik yönetimini üstleniyorum. Düzenli olarak SEO uyumlu, kullanıcı odaklı blog yazıları planlıyor ve yayınlıyorum.",
+    description: "Fortis Designer blog hesabının içerik yönetimini üstleniyorum. Düzenli olarak SEO uyumlu, kullanıcı odaklı blog yazıları planlıyor ve yayınlıyorum.",
     tags: ["İçerik Yönetimi", "SEO", "Blog"],
     link: "https://fortisdesigner.com/blog",
     image: fortisBlogImg,
-    accent: "185 80% 55%",
   },
 ];
 
-const ProjectCard = ({
-  project,
-  index,
-}: {
-  project: Project;
-  index: number;
-}) => (
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -58,7 +45,6 @@ const ProjectCard = ({
     className="group relative"
   >
     <div className="glass-card rounded-3xl overflow-hidden transition-all duration-500">
-      {/* Image with overlay */}
       <div className="aspect-[16/10] overflow-hidden relative">
         {project.image ? (
           <motion.img
@@ -76,15 +62,8 @@ const ProjectCard = ({
           </div>
         )}
 
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{
-            background: `linear-gradient(to top, hsla(${project.accent}, 0.3), transparent 60%)`,
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-        {/* Visit link */}
         {project.link && (
           <motion.a
             href={project.link}
@@ -106,14 +85,12 @@ const ProjectCard = ({
       </div>
 
       <div className="p-6 md:p-8">
-        <div className="flex items-start justify-between mb-3">
-          <h3
-            className="text-lg font-bold text-foreground group-hover:gradient-text transition-all duration-300"
-            style={{ fontFamily: "'Syne', sans-serif" }}
-          >
-            {project.title}
-          </h3>
-        </div>
+        <h3
+          className="text-lg font-bold text-foreground mb-3 group-hover:text-foreground/80 transition-all duration-300"
+          style={{ fontFamily: "'Syne', sans-serif" }}
+        >
+          {project.title}
+        </h3>
         <p className="text-muted-foreground text-sm leading-relaxed mb-6">
           {project.description}
         </p>
@@ -121,11 +98,10 @@ const ProjectCard = ({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full transition-colors duration-300"
+              className="text-[10px] uppercase tracking-widest font-bold text-muted-foreground px-3 py-1.5 rounded-full"
               style={{
-                background: `hsla(${project.accent}, 0.08)`,
-                color: `hsl(${project.accent})`,
-                border: `1px solid hsla(${project.accent}, 0.15)`,
+                background: "hsla(0, 0%, 100%, 0.04)",
+                border: "1px solid hsla(0, 0%, 100%, 0.08)",
               }}
             >
               {tag}
@@ -152,7 +128,7 @@ const ProjectsSection = () => (
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
+        className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
       >
         Çalışmalar
       </motion.span>
@@ -162,9 +138,7 @@ const ProjectsSection = () => (
       >
         Seçili Projeler
       </h2>
-      <p className="text-muted-foreground text-sm">
-        Dijital dünyada iz bırakan işler.
-      </p>
+      <p className="text-muted-foreground text-sm">Dijital dünyada iz bırakan işler.</p>
     </motion.div>
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
