@@ -16,7 +16,6 @@ const skills = [
 
 const SkillsSection = () => (
   <section id="yetenekler" className="relative py-24 md:py-32 px-6 max-w-6xl mx-auto">
-    {/* Section divider */}
     <div className="section-divider mb-24" />
 
     <motion.div
@@ -30,7 +29,7 @@ const SkillsSection = () => (
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="text-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
+        className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
       >
         Teknolojiler
       </motion.span>
@@ -55,23 +54,17 @@ const SkillsSection = () => (
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.06, duration: 0.5 }}
-            whileHover={{
-              y: -8,
-              transition: { duration: 0.3 },
-            }}
+            whileHover={{ y: -8, transition: { duration: 0.3 } }}
             className="group glass-card rounded-2xl p-5 flex flex-col items-center gap-3 text-center cursor-default"
           >
             <div
               className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110"
               style={{
-                background: "linear-gradient(135deg, hsla(340, 85%, 60%, 0.1), hsla(270, 80%, 65%, 0.1))",
-                border: "1px solid hsla(340, 85%, 60%, 0.15)",
+                background: "hsla(0, 0%, 100%, 0.04)",
+                border: "1px solid hsla(0, 0%, 100%, 0.08)",
               }}
             >
-              <Icon
-                size={22}
-                className="text-muted-foreground group-hover:text-primary transition-colors duration-500"
-              />
+              <Icon size={22} className="text-muted-foreground group-hover:text-foreground transition-colors duration-500" />
             </div>
             <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-500">
               {skill.name}
