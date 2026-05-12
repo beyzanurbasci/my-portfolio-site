@@ -158,13 +158,6 @@ const HeroSection = () => (
           style={{ border: "3px solid hsla(0, 0%, 100%, 0.1)" }}
         />
 
-        <motion.div
-          className="absolute -bottom-2 -right-2 px-4 py-2 rounded-xl text-xs font-bold bg-foreground text-background"
-          animate={{ y: [0, -5, 0] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        >
-          🚀 Open to Work
-        </motion.div>
       </motion.div>
     </div>
 
