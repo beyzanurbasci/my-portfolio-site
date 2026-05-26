@@ -66,25 +66,26 @@ const ContactSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Name</label>
-                <input type="text" className="form-input" placeholder="Your full name" required />
+                <input name="name" type="text" className="form-input" placeholder="Your full name" required />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Email</label>
-                <input type="email" className="form-input" placeholder="hello@example.com" required />
+                <input name="email" type="email" className="form-input" placeholder="hello@example.com" required />
               </div>
             </div>
             <div className="space-y-2">
               <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Message</label>
-              <textarea rows={4} className="form-input resize-none" placeholder="Tell me about your project..." required />
+              <textarea name="message" rows={4} className="form-input resize-none" placeholder="Tell me about your project..." required />
             </div>
             <motion.button
               type="submit"
-              className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-sm"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
+              disabled={loading}
+              className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-sm disabled:opacity-60"
+              whileHover={{ scale: loading ? 1 : 1.01 }}
+              whileTap={{ scale: loading ? 1 : 0.98 }}
             >
-              {submitted ? "Sent ✓" : "Send"}
-              {!submitted && <Send size={16} />}
+              {loading ? "Sending..." : submitted ? "Sent ✓" : "Send"}
+              {!submitted && !loading && <Send size={16} />}
             </motion.button>
           </form>
 
