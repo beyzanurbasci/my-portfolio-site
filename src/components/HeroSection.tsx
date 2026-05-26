@@ -38,17 +38,6 @@ const HeroSection = () => (
 
     <div className="relative grid md:grid-cols-[1fr_auto] gap-16 items-center z-10">
       <div>
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex items-center gap-2 mb-6"
-        >
-          <Sparkles size={14} className="text-foreground/50" />
-          <span className="text-foreground/50 font-mono text-xs tracking-[0.3em] uppercase">
-            Portfolio 2026
-          </span>
-        </motion.div>
 
         <div className="overflow-hidden mb-2">
           <motion.h1
