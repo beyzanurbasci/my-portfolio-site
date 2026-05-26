@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronRight, Eye, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Linkedin, Mail, ChevronRight, Sparkles } from "lucide-react";
 import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
 const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
