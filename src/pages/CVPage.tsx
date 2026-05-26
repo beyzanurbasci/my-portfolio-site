@@ -11,7 +11,7 @@ const CVPage = () => (
           to="/"
           className="btn-secondary flex items-center gap-2 px-5 py-3 text-sm"
         >
-          <ArrowLeft size={18} /> Geri Dön
+          <ArrowLeft size={18} /> Back
         </Link>
       </div>
 
