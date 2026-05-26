@@ -1,14 +1,35 @@
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin, Mail } from "lucide-react";
 import { useState, FormEvent } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      message: String(fd.get("message") || ""),
+    };
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", { body: payload });
+      if (error) throw error;
+      setSubmitted(true);
+      form.reset();
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Failed to send", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
