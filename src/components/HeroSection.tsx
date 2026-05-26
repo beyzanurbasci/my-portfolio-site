@@ -80,11 +80,10 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-muted-foreground text-base md:text-lg max-w-xl mb-10 leading-relaxed"
         >
-          Yazılım Mühendisliği öğrencisi olarak, Atık Nakit bünyesinde görüntü
-          işleme ve YOLO modelleri üzerine staj yapıyor, aynı zamanda C# ve
-          ASP.NET ile kurumsal web projeleri geliştirerek teknik uzmanlığımı
-          dijital operasyon yönetimi ve topluluk liderliği tecrübelerimle
-          birleştiriyorum.
+          As a Software Engineering student, I'm interning at Atık Nakit on
+          image processing and YOLO models, while also building enterprise web
+          projects with C# and ASP.NET — combining my technical expertise with
+          experience in digital operations management and community leadership.
         </motion.p>
 
         <motion.div
@@ -94,10 +93,10 @@ const HeroSection = () => (
           className="flex flex-wrap gap-4 mb-12"
         >
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
-            Projelerimi Gör <ChevronRight size={18} />
+            View My Projects <ChevronRight size={18} />
           </a>
           <Link to="/cv" className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm">
-            <Eye size={18} /> CV Görüntüle
+            <Eye size={18} /> View CV
           </Link>
         </motion.div>
 
