@@ -140,7 +140,7 @@ const HeroSection = () => (
         <motion.div
           className="absolute -inset-6 rounded-full"
           style={{
-            background: "conic-gradient(from 0deg, transparent 60%, hsla(0,0%,100%,0.15) 75%, hsla(0,0%,100%,0.05) 85%, transparent 100%)",
+            background: "conic-gradient(from 0deg, transparent 50%, hsla(243, 90%, 65%, 0.6) 75%, hsla(250, 90%, 75%, 0.3) 90%, transparent 100%)",
             padding: "2px",
           }}
           animate={{ rotate: 360 }}
