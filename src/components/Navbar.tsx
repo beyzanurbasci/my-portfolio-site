@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
 
         <a href="#iletisim" className="hidden md:inline-flex btn-primary px-5 py-2 text-xs tracking-wide">
-          İletişime Geç
+          Get in Touch
         </a>
 
         <button
