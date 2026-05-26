@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Projeyi Görüntüle"
+            aria-label="View Project"
           >
             <ArrowUpRight size={16} className="text-white" />
           </motion.a>
