@@ -31,16 +31,16 @@ const SkillsSection = () => (
         viewport={{ once: true }}
         className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
       >
-        Teknolojiler
+        Technologies
       </motion.span>
       <h2
         className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tighter"
         style={{ fontFamily: "'Syne', sans-serif" }}
       >
-        Teknoloji Yığını
+        Tech Stack
       </h2>
       <p className="text-muted-foreground text-sm max-w-md mx-auto">
-        Kullandığım araçlar ve uzmanlık alanlarım.
+        Tools I use and the areas I specialize in.
       </p>
     </motion.div>
 
