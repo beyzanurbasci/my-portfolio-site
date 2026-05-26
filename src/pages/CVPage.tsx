@@ -11,7 +11,7 @@ const CVPage = () => (
           to="/"
           className="btn-secondary flex items-center gap-2 px-5 py-3 text-sm"
         >
-          <ArrowLeft size={18} /> Geri Dön
+          <ArrowLeft size={18} /> Back
         </Link>
       </div>
 
@@ -20,7 +20,7 @@ const CVPage = () => (
           <img
             key={page}
             src={page}
-            alt={`Beyzanur Başçı CV sayfa ${index + 1}`}
+            alt={`Beyzanur Başçı CV page ${index + 1}`}
             className="w-full rounded-lg border border-border bg-card shadow-2xl"
           />
         ))}

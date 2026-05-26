@@ -14,23 +14,23 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Topçu Holding Kurumsal Web Sitesi",
-    description: "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
+    title: "Topçu Holding Corporate Website",
+    description: "Development of a modern, fully responsive corporate website for Topçu Holding that reflects their brand identity.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://www.topcuholding.com/",
     image: topcuHoldingImg,
   },
   {
-    title: "Başçı Katlanır Cam Sistemleri",
-    description: "Başçı Katlanır Cam Sistemleri için modern, kurumsal kimliği yansıtan ve tam duyarlı bir web sitesi geliştirilmesi.",
+    title: "Başçı Folding Glass Systems",
+    description: "Development of a modern, fully responsive corporate website for Başçı Folding Glass Systems that reflects their brand identity.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://bascikatlanir.com/",
     image: basciKatlanirImg,
   },
   {
-    title: "Fortis Designer Blog Yönetimi",
-    description: "Fortis Designer blog hesabının içerik yönetimini üstleniyorum. Düzenli olarak SEO uyumlu, kullanıcı odaklı blog yazıları planlıyor ve yayınlıyorum.",
-    tags: ["İçerik Yönetimi", "SEO", "Blog"],
+    title: "Fortis Designer Blog Management",
+    description: "I manage content for the Fortis Designer blog, regularly planning and publishing SEO-friendly, user-focused blog posts.",
+    tags: ["Content Management", "SEO", "Blog"],
     link: "https://fortisdesigner.com/blog",
     image: fortisBlogImg,
   },
@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            aria-label="Projeyi Görüntüle"
+            aria-label="View Project"
           >
             <ArrowUpRight size={16} className="text-white" />
           </motion.a>
@@ -130,15 +130,15 @@ const ProjectsSection = () => (
         viewport={{ once: true }}
         className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
       >
-        Çalışmalar
+        Work
       </motion.span>
       <h2
         className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tighter"
         style={{ fontFamily: "'Syne', sans-serif" }}
       >
-        Seçili Projeler
+        Selected Projects
       </h2>
-      <p className="text-muted-foreground text-sm">Dijital dünyada iz bırakan işler.</p>
+      <p className="text-muted-foreground text-sm">Work that leaves a mark in the digital world.</p>
     </motion.div>
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

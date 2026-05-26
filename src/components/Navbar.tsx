@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Hakkımda", href: "#hakkimda" },
-  { label: "Yetenekler", href: "#yetenekler" },
-  { label: "Projeler", href: "#projeler" },
-  { label: "İletişim", href: "#iletisim" },
+  { label: "About", href: "#hakkimda" },
+  { label: "Skills", href: "#yetenekler" },
+  { label: "Projects", href: "#projeler" },
+  { label: "Contact", href: "#iletisim" },
 ];
 
 const Navbar = () => {
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
 
         <a href="#iletisim" className="hidden md:inline-flex btn-primary px-5 py-2 text-xs tracking-wide">
-          İletişime Geç
+          Get in Touch
         </a>
 
         <button
@@ -89,7 +89,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className="block btn-primary text-center px-5 py-3 text-sm mt-2"
             >
-              İletişime Geç
+              Get in Touch
             </a>
           </motion.div>
         )}

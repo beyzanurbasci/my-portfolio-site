@@ -47,7 +47,7 @@ const HeroSection = () => (
         >
           <Sparkles size={14} className="text-foreground/50" />
           <span className="text-foreground/50 font-mono text-xs tracking-[0.3em] uppercase">
-            Portföy 2026
+            Portfolio 2026
           </span>
         </motion.div>
 
@@ -59,7 +59,7 @@ const HeroSection = () => (
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.95]"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            Merhaba, Ben
+            Hello, I'm
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">
@@ -80,11 +80,10 @@ const HeroSection = () => (
           transition={{ duration: 0.7, delay: 0.4 }}
           className="text-muted-foreground text-base md:text-lg max-w-xl mb-10 leading-relaxed"
         >
-          Yazılım Mühendisliği öğrencisi olarak, Atık Nakit bünyesinde görüntü
-          işleme ve YOLO modelleri üzerine staj yapıyor, aynı zamanda C# ve
-          ASP.NET ile kurumsal web projeleri geliştirerek teknik uzmanlığımı
-          dijital operasyon yönetimi ve topluluk liderliği tecrübelerimle
-          birleştiriyorum.
+          As a Software Engineering student, I'm interning at Atık Nakit on
+          image processing and YOLO models, while also building enterprise web
+          projects with C# and ASP.NET — combining my technical expertise with
+          experience in digital operations management and community leadership.
         </motion.p>
 
         <motion.div
@@ -94,10 +93,10 @@ const HeroSection = () => (
           className="flex flex-wrap gap-4 mb-12"
         >
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
-            Projelerimi Gör <ChevronRight size={18} />
+            View My Projects <ChevronRight size={18} />
           </a>
           <Link to="/cv" className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm">
-            <Eye size={18} /> CV Görüntüle
+            <Eye size={18} /> View CV
           </Link>
         </motion.div>
 
@@ -153,7 +152,7 @@ const HeroSection = () => (
         <div className="absolute -inset-8 bg-white/5 blur-3xl rounded-full" />
         <img
           src={beyzanurPortrait}
-          alt="Beyzanur Başçı portre"
+          alt="Beyzanur Başçı portrait"
           className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl"
           style={{ border: "3px solid hsla(0, 0%, 100%, 0.1)" }}
         />
