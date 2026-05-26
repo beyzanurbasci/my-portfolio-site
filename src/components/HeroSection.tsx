@@ -149,12 +149,12 @@ const HeroSection = () => (
           <div className="w-full h-full rounded-full bg-background" />
         </motion.div>
 
-        <div className="absolute -inset-8 bg-white/5 blur-3xl rounded-full" />
+        <div className="absolute -inset-8 blur-3xl rounded-full" style={{ background: "hsla(243, 85%, 60%, 0.3)" }} />
         <img
           src={beyzanurPortrait}
           alt="Beyzanur Başçı portrait"
           className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl"
-          style={{ border: "3px solid hsla(0, 0%, 100%, 0.1)" }}
+          style={{ border: "3px solid hsla(243, 85%, 70%, 0.3)" }}
         />
 
       </motion.div>
