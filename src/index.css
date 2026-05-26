@@ -183,4 +183,37 @@
     50% { border-radius: 50% 60% 30% 60% / 30% 40% 70% 60%; }
     75% { border-radius: 60% 30% 60% 40% / 70% 50% 40% 60%; }
   }
+
+  @keyframes neon-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 12px 2px hsla(320, 95%, 60%, 0.55),
+        0 0 28px 6px hsla(285, 90%, 60%, 0.35),
+        inset 0 0 10px hsla(320, 95%, 65%, 0.25);
+    }
+    50% {
+      box-shadow:
+        0 0 18px 4px hsla(320, 95%, 65%, 0.8),
+        0 0 42px 12px hsla(285, 95%, 65%, 0.55),
+        inset 0 0 14px hsla(320, 95%, 70%, 0.4);
+    }
+  }
+
+  .glow-icon {
+    @apply relative flex items-center justify-center rounded-full transition-all duration-300;
+    background: radial-gradient(circle at 50% 50%, hsla(240, 40%, 8%, 0.95), hsla(240, 50%, 4%, 1));
+    border: 1px solid hsla(320, 95%, 65%, 0.6);
+    color: hsl(320, 95%, 80%);
+    animation: neon-pulse 2.8s ease-in-out infinite;
+  }
+  .glow-icon:hover {
+    color: hsl(320, 100%, 92%);
+    border-color: hsla(320, 100%, 75%, 0.95);
+    transform: translateY(-3px) scale(1.08);
+    box-shadow:
+      0 0 22px 5px hsla(320, 100%, 65%, 0.9),
+      0 0 50px 14px hsla(285, 100%, 65%, 0.6),
+      inset 0 0 16px hsla(320, 100%, 75%, 0.5);
+  }
 }
+
