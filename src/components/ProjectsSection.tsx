@@ -28,7 +28,7 @@ const projects: Project[] = [
     image: basciKatlanirImg,
   },
   {
-    title: "Saybes",
+    title: "Saybes Design Blog Management",
     description: "I manage content for the Saybes blog, regularly planning and publishing SEO-friendly, user-focused blog posts.",
     tags: ["Content Management", "SEO", "Blog"],
     link: "https://saybes.com/",
