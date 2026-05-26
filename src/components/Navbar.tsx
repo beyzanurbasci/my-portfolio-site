@@ -89,7 +89,7 @@ const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className="block btn-primary text-center px-5 py-3 text-sm mt-2"
             >
-              İletişime Geç
+              Get in Touch
             </a>
           </motion.div>
         )}
