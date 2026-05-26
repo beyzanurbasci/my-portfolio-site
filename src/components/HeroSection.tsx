@@ -5,8 +5,8 @@ import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
 const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
   <motion.div
-    className="absolute rounded-full bg-white/20"
-    style={{ width: size, height: size, left: `${x}%`, bottom: "-10%" }}
+    className="absolute rounded-full"
+    style={{ width: size, height: size, left: `${x}%`, bottom: "-10%", background: "hsl(250 85% 70%)", boxShadow: "0 0 10px hsl(243 85% 65%)" }}
     animate={{
       y: [0, -800],
       opacity: [0, 0.6, 0.6, 0],
