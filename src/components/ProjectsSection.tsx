@@ -14,23 +14,23 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Topçu Holding Kurumsal Web Sitesi",
-    description: "Topçu Holding için modern, kurumsal kimliği yansıtan ve tam duyarlı (responsive) bir web sitesi geliştirilmesi.",
+    title: "Topçu Holding Corporate Website",
+    description: "Development of a modern, fully responsive corporate website for Topçu Holding that reflects their brand identity.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://www.topcuholding.com/",
     image: topcuHoldingImg,
   },
   {
-    title: "Başçı Katlanır Cam Sistemleri",
-    description: "Başçı Katlanır Cam Sistemleri için modern, kurumsal kimliği yansıtan ve tam duyarlı bir web sitesi geliştirilmesi.",
+    title: "Başçı Folding Glass Systems",
+    description: "Development of a modern, fully responsive corporate website for Başçı Folding Glass Systems that reflects their brand identity.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://bascikatlanir.com/",
     image: basciKatlanirImg,
   },
   {
-    title: "Fortis Designer Blog Yönetimi",
-    description: "Fortis Designer blog hesabının içerik yönetimini üstleniyorum. Düzenli olarak SEO uyumlu, kullanıcı odaklı blog yazıları planlıyor ve yayınlıyorum.",
-    tags: ["İçerik Yönetimi", "SEO", "Blog"],
+    title: "Fortis Designer Blog Management",
+    description: "I manage content for the Fortis Designer blog, regularly planning and publishing SEO-friendly, user-focused blog posts.",
+    tags: ["Content Management", "SEO", "Blog"],
     link: "https://fortisdesigner.com/blog",
     image: fortisBlogImg,
   },
