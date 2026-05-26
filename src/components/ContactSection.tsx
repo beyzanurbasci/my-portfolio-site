@@ -62,7 +62,7 @@ const ContactSection = () => {
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
             >
-              {submitted ? "Gönderildi ✓" : "Gönder"}
+              {submitted ? "Sent ✓" : "Send"}
               {!submitted && <Send size={16} />}
             </motion.button>
           </form>
