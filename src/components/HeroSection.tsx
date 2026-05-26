@@ -59,7 +59,7 @@ const HeroSection = () => (
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tighter leading-[0.95]"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            Merhaba, Ben
+            Hello, I'm
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-8">
