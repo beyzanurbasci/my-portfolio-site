@@ -139,15 +139,37 @@
 
   .btn-primary {
     @apply font-bold rounded-xl transition-all duration-300 relative overflow-hidden text-white;
-    background: linear-gradient(135deg, hsl(322 90% 59%), hsl(295 95% 65%));
-    box-shadow: 0 8px 24px -8px hsla(322, 95%, 60%, 0.5);
+    background: linear-gradient(135deg, hsl(322 95% 55%), hsl(295 95% 65%));
+    box-shadow:
+      0 8px 24px -6px hsla(322, 95%, 55%, 0.6),
+      0 0 30px -4px hsla(295, 95%, 65%, 0.45),
+      inset 0 0 12px hsla(322, 100%, 75%, 0.25);
+    animation: btn-pulse 3s ease-in-out infinite;
   }
   .btn-primary:hover {
-    @apply scale-[1.03];
-    box-shadow: 0 12px 36px -8px hsla(322, 95%, 65%, 0.7), 0 0 40px -5px hsla(295, 95%, 70%, 0.4);
+    @apply scale-[1.04];
+    box-shadow:
+      0 14px 40px -6px hsla(322, 100%, 60%, 0.85),
+      0 0 60px -2px hsla(295, 100%, 70%, 0.6),
+      inset 0 0 18px hsla(322, 100%, 80%, 0.4);
   }
   .btn-primary:active {
     @apply scale-[0.98];
+  }
+
+  @keyframes btn-pulse {
+    0%, 100% {
+      box-shadow:
+        0 8px 24px -6px hsla(322, 95%, 55%, 0.55),
+        0 0 28px -4px hsla(295, 95%, 65%, 0.4),
+        inset 0 0 12px hsla(322, 100%, 75%, 0.22);
+    }
+    50% {
+      box-shadow:
+        0 10px 32px -4px hsla(322, 100%, 60%, 0.75),
+        0 0 48px -2px hsla(295, 100%, 70%, 0.55),
+        inset 0 0 16px hsla(322, 100%, 80%, 0.35);
+    }
   }
 
   .btn-secondary {
