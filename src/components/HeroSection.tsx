@@ -47,7 +47,7 @@ const HeroSection = () => (
         >
           <Sparkles size={14} className="text-foreground/50" />
           <span className="text-foreground/50 font-mono text-xs tracking-[0.3em] uppercase">
-            Portföy 2026
+            Portfolio 2026
           </span>
         </motion.div>
 
