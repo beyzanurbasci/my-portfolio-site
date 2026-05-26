@@ -130,15 +130,15 @@ const ProjectsSection = () => (
         viewport={{ once: true }}
         className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
       >
-        Çalışmalar
+        Work
       </motion.span>
       <h2
         className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tighter"
         style={{ fontFamily: "'Syne', sans-serif" }}
       >
-        Seçili Projeler
+        Selected Projects
       </h2>
-      <p className="text-muted-foreground text-sm">Dijital dünyada iz bırakan işler.</p>
+      <p className="text-muted-foreground text-sm">Work that leaves a mark in the digital world.</p>
     </motion.div>
 
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
