@@ -31,30 +31,30 @@ const ContactSection = () => {
             viewport={{ once: true }}
             className="text-foreground/40 font-mono text-xs tracking-[0.3em] uppercase mb-4 block"
           >
-            İletişim
+            Contact
           </motion.span>
           <h2
             className="text-3xl md:text-4xl font-bold text-foreground mb-2 tracking-tighter"
             style={{ fontFamily: "'Syne', sans-serif" }}
           >
-            Benimle iletişime geçin
+            Get in touch with me
           </h2>
-          <p className="text-muted-foreground text-base mb-10">Birlikte çalışalım.</p>
+          <p className="text-muted-foreground text-base mb-10">Let's work together.</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">İsim</label>
-                <input type="text" className="form-input" placeholder="Adınız Soyadınız" required />
+                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Name</label>
+                <input type="text" className="form-input" placeholder="Your full name" required />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">E-Posta</label>
-                <input type="email" className="form-input" placeholder="merhaba@ornek.com" required />
+                <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Email</label>
+                <input type="email" className="form-input" placeholder="hello@example.com" required />
               </div>
             </div>
             <div className="space-y-2">
-              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Mesaj</label>
-              <textarea rows={4} className="form-input resize-none" placeholder="Projenizden bahsedin..." required />
+              <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Message</label>
+              <textarea rows={4} className="form-input resize-none" placeholder="Tell me about your project..." required />
             </div>
             <motion.button
               type="submit"
