@@ -28,10 +28,10 @@ const projects: Project[] = [
     image: basciKatlanirImg,
   },
   {
-    title: "Fortis Designer Blog Management",
-    description: "I manage content for the Fortis Designer blog, regularly planning and publishing SEO-friendly, user-focused blog posts.",
+    title: "Saybes",
+    description: "I manage content for the Saybes blog, regularly planning and publishing SEO-friendly, user-focused blog posts.",
     tags: ["Content Management", "SEO", "Blog"],
-    link: "https://fortisdesigner.com/blog",
+    link: "https://saybes.com/",
     image: fortisBlogImg,
   },
 ];
