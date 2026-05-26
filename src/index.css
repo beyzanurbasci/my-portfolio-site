@@ -15,9 +15,9 @@
     --popover: 240 35% 9%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 243 75% 59%;
+    --primary: 322 90% 59%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 250 85% 70%;
+    --primary-glow: 295 95% 70%;
 
     --secondary: 240 30% 14%;
     --secondary-foreground: 0 0% 95%;
@@ -25,7 +25,7 @@
     --muted: 240 20% 22%;
     --muted-foreground: 240 10% 65%;
 
-    --accent: 250 85% 70%;
+    --accent: 295 95% 70%;
     --accent-foreground: 240 40% 5%;
 
     --destructive: 0 84% 60%;
@@ -33,21 +33,21 @@
 
     --border: 240 50% 100% / 0.08;
     --input: 240 50% 100% / 0.08;
-    --ring: 243 75% 59%;
+    --ring: 322 90% 59%;
 
     --radius: 0.75rem;
 
     --surface: 240 30% 9%;
-    --surface-light: 243 75% 100% / 0.05;
+    --surface-light: 322 90% 100% / 0.05;
 
     --sidebar-background: 240 40% 5%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary: 322 90% 59%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 30% 14%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 240 50% 100% / 0.08;
-    --sidebar-ring: 243 75% 59%;
+    --sidebar-ring: 322 90% 59%;
   }
 }
 
@@ -66,7 +66,7 @@
   }
 
   ::selection {
-    background-color: hsl(243 75% 59%);
+    background-color: hsl(322 90% 59%);
     color: hsl(0 0% 100%);
   }
 }
@@ -75,34 +75,34 @@
   .glass-navbar {
     @apply backdrop-blur-2xl border-b;
     background: hsla(240, 40%, 5%, 0.7);
-    border-color: hsla(243, 75%, 70%, 0.1);
+    border-color: hsla(322, 90%, 70%, 0.1);
   }
 
   .glass-card {
     background: hsla(240, 35%, 9%, 0.6);
-    border: 1px solid hsla(243, 75%, 80%, 0.08);
+    border: 1px solid hsla(322, 90%, 80%, 0.08);
     backdrop-filter: blur(20px);
   }
 
   .glass-card:hover {
-    border-color: hsla(243, 85%, 75%, 0.3);
-    box-shadow: 0 0 50px -10px hsla(243, 85%, 65%, 0.25);
+    border-color: hsla(322, 95%, 75%, 0.3);
+    box-shadow: 0 0 50px -10px hsla(322, 95%, 65%, 0.25);
   }
 
   .gradient-text {
     @apply text-transparent bg-clip-text;
-    background-image: linear-gradient(135deg, hsl(0 0% 100%), hsl(250 85% 75%), hsl(243 90% 65%));
+    background-image: linear-gradient(135deg, hsl(0 0% 100%), hsl(295 95% 75%), hsl(322 95% 65%));
   }
 
   .glow-bg {
-    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsla(243, 85%, 65%, 0.12), transparent 40%);
+    background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), hsla(322, 95%, 65%, 0.12), transparent 40%);
   }
 
   .mesh-gradient {
     background:
-      radial-gradient(ellipse at 20% 50%, hsla(243, 85%, 60%, 0.15) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, hsla(250, 85%, 70%, 0.1) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 90%, hsla(220, 80%, 50%, 0.08) 0%, transparent 50%);
+      radial-gradient(ellipse at 20% 50%, hsla(322, 95%, 60%, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, hsla(295, 95%, 70%, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 90%, hsla(280, 85%, 50%, 0.08) 0%, transparent 50%);
   }
 
   .noise-overlay {
@@ -120,12 +120,12 @@
 
   .btn-primary {
     @apply font-bold rounded-xl transition-all duration-300 relative overflow-hidden text-white;
-    background: linear-gradient(135deg, hsl(243 75% 59%), hsl(250 85% 65%));
-    box-shadow: 0 8px 24px -8px hsla(243, 85%, 60%, 0.5);
+    background: linear-gradient(135deg, hsl(322 90% 59%), hsl(295 95% 65%));
+    box-shadow: 0 8px 24px -8px hsla(322, 95%, 60%, 0.5);
   }
   .btn-primary:hover {
     @apply scale-[1.03];
-    box-shadow: 0 12px 36px -8px hsla(243, 90%, 65%, 0.7), 0 0 40px -5px hsla(250, 85%, 70%, 0.4);
+    box-shadow: 0 12px 36px -8px hsla(322, 95%, 65%, 0.7), 0 0 40px -5px hsla(295, 95%, 70%, 0.4);
   }
   .btn-primary:active {
     @apply scale-[0.98];
@@ -133,14 +133,14 @@
 
   .btn-secondary {
     @apply font-bold rounded-xl transition-all duration-300;
-    background: hsla(243, 75%, 70%, 0.08);
-    border: 1px solid hsla(243, 75%, 70%, 0.2);
+    background: hsla(322, 90%, 70%, 0.08);
+    border: 1px solid hsla(322, 90%, 70%, 0.2);
     color: hsl(var(--foreground));
   }
   .btn-secondary:hover {
-    background: hsla(243, 75%, 70%, 0.15);
-    border-color: hsla(243, 85%, 75%, 0.4);
-    box-shadow: 0 0 24px -8px hsla(243, 85%, 65%, 0.4);
+    background: hsla(322, 90%, 70%, 0.15);
+    border-color: hsla(322, 95%, 75%, 0.4);
+    box-shadow: 0 0 24px -8px hsla(322, 95%, 65%, 0.4);
   }
   .btn-secondary:active {
     @apply scale-[0.98];
@@ -149,24 +149,24 @@
   .skill-pill {
     @apply px-6 py-3 rounded-full text-sm font-medium transition-all duration-500 cursor-default relative overflow-hidden;
     background: hsla(240, 35%, 9%, 0.8);
-    border: 1px solid hsla(243, 75%, 70%, 0.1);
+    border: 1px solid hsla(322, 90%, 70%, 0.1);
     color: hsl(var(--muted-foreground));
   }
   .skill-pill:hover {
-    border-color: hsla(243, 85%, 75%, 0.35);
+    border-color: hsla(322, 95%, 75%, 0.35);
     color: hsl(var(--foreground));
-    box-shadow: 0 0 25px -5px hsla(243, 85%, 65%, 0.3);
+    box-shadow: 0 0 25px -5px hsla(322, 95%, 65%, 0.3);
   }
 
   .form-input {
     @apply w-full rounded-xl px-4 py-3 outline-none transition-all duration-300;
     background: hsla(240, 40%, 5%, 0.8);
-    border: 1px solid hsla(243, 75%, 70%, 0.12);
+    border: 1px solid hsla(322, 90%, 70%, 0.12);
     color: hsl(var(--foreground));
   }
   .form-input:focus {
-    border-color: hsla(243, 85%, 70%, 0.5);
-    box-shadow: 0 0 24px -5px hsla(243, 85%, 65%, 0.35);
+    border-color: hsla(322, 95%, 70%, 0.5);
+    box-shadow: 0 0 24px -5px hsla(322, 95%, 65%, 0.35);
   }
   .form-input::placeholder {
     color: hsl(var(--muted-foreground));
@@ -174,7 +174,7 @@
 
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsla(243, 85%, 70%, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, hsla(322, 95%, 70%, 0.3), transparent);
   }
 
   @keyframes blob-morph {
