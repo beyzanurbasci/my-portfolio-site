@@ -152,7 +152,7 @@ const HeroSection = () => (
         <div className="absolute -inset-8 bg-white/5 blur-3xl rounded-full" />
         <img
           src={beyzanurPortrait}
-          alt="Beyzanur Başçı portre"
+          alt="Beyzanur Başçı portrait"
           className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl"
           style={{ border: "3px solid hsla(0, 0%, 100%, 0.1)" }}
         />
