@@ -59,6 +59,25 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Space Grotesk', system-ui, sans-serif;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(900px circle at 15% 10%, hsla(322, 95%, 55%, 0.18), transparent 55%),
+      radial-gradient(800px circle at 85% 25%, hsla(295, 95%, 60%, 0.14), transparent 55%),
+      radial-gradient(1000px circle at 50% 100%, hsla(322, 95%, 50%, 0.16), transparent 60%);
+    animation: ambient-shift 14s ease-in-out infinite alternate;
+  }
+
+  @keyframes ambient-shift {
+    0%   { opacity: 0.85; transform: translate3d(0, 0, 0) scale(1); }
+    100% { opacity: 1;    transform: translate3d(0, -2%, 0) scale(1.05); }
   }
 
   html {
