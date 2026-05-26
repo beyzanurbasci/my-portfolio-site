@@ -5,8 +5,8 @@ import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
 const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
   <motion.div
-    className="absolute rounded-full bg-white/20"
-    style={{ width: size, height: size, left: `${x}%`, bottom: "-10%" }}
+    className="absolute rounded-full"
+    style={{ width: size, height: size, left: `${x}%`, bottom: "-10%", background: "hsl(250 85% 70%)", boxShadow: "0 0 10px hsl(243 85% 65%)" }}
     animate={{
       y: [0, -800],
       opacity: [0, 0.6, 0.6, 0],
@@ -25,12 +25,12 @@ const HeroSection = () => (
   <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[100vh] flex flex-col justify-center overflow-hidden">
     <div className="absolute inset-0 mesh-gradient pointer-events-none" />
     <div
-      className="absolute top-1/4 -left-32 w-96 h-96 opacity-[0.04] blur-3xl bg-white"
-      style={{ animation: "blob-morph 8s ease-in-out infinite" }}
+      className="absolute top-1/4 -left-32 w-96 h-96 opacity-40 blur-3xl"
+      style={{ background: "hsl(243 75% 59%)", animation: "blob-morph 8s ease-in-out infinite" }}
     />
     <div
-      className="absolute bottom-1/4 -right-32 w-80 h-80 opacity-[0.03] blur-3xl bg-white"
-      style={{ animation: "blob-morph 10s ease-in-out infinite reverse" }}
+      className="absolute bottom-1/4 -right-32 w-80 h-80 opacity-30 blur-3xl"
+      style={{ background: "hsl(250 85% 70%)", animation: "blob-morph 10s ease-in-out infinite reverse" }}
     />
 
     {[...Array(6)].map((_, i) => (
@@ -140,7 +140,7 @@ const HeroSection = () => (
         <motion.div
           className="absolute -inset-6 rounded-full"
           style={{
-            background: "conic-gradient(from 0deg, transparent 60%, hsla(0,0%,100%,0.15) 75%, hsla(0,0%,100%,0.05) 85%, transparent 100%)",
+            background: "conic-gradient(from 0deg, transparent 50%, hsla(243, 90%, 65%, 0.6) 75%, hsla(250, 90%, 75%, 0.3) 90%, transparent 100%)",
             padding: "2px",
           }}
           animate={{ rotate: 360 }}
@@ -149,12 +149,12 @@ const HeroSection = () => (
           <div className="w-full h-full rounded-full bg-background" />
         </motion.div>
 
-        <div className="absolute -inset-8 bg-white/5 blur-3xl rounded-full" />
+        <div className="absolute -inset-8 blur-3xl rounded-full" style={{ background: "hsla(243, 85%, 60%, 0.3)" }} />
         <img
           src={beyzanurPortrait}
           alt="Beyzanur Başçı portrait"
           className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl"
-          style={{ border: "3px solid hsla(0, 0%, 100%, 0.1)" }}
+          style={{ border: "3px solid hsla(243, 85%, 70%, 0.3)" }}
         />
 
       </motion.div>
