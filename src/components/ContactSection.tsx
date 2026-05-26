@@ -100,12 +100,7 @@ const ContactSection = () => {
                 href={href}
                 target={label !== "Email" ? "_blank" : undefined}
                 rel={label !== "Email" ? "noopener noreferrer" : undefined}
-                className="w-11 h-11 rounded-xl flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-300"
-                style={{
-                  background: "hsla(0, 0%, 100%, 0.04)",
-                  border: "1px solid hsla(0, 0%, 100%, 0.08)",
-                }}
-                whileHover={{ scale: 1.1, y: -2 }}
+                className="glow-icon w-12 h-12"
                 whileTap={{ scale: 0.95 }}
                 aria-label={label}
               >
