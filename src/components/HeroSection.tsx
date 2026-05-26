@@ -95,9 +95,6 @@ const HeroSection = () => (
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
             View My Projects <ChevronRight size={18} />
           </a>
-          <Link to="/cv" className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm">
-            <Eye size={18} /> View CV
-          </Link>
         </motion.div>
 
         <motion.div
