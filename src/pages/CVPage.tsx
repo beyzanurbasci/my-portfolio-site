@@ -20,7 +20,7 @@ const CVPage = () => (
           <img
             key={page}
             src={page}
-            alt={`Beyzanur Başçı CV sayfa ${index + 1}`}
+            alt={`Beyzanur Başçı CV page ${index + 1}`}
             className="w-full rounded-lg border border-border bg-card shadow-2xl"
           />
         ))}
