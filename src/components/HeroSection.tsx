@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, ChevronRight, Eye, Sparkles } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Github, Linkedin, Mail, ChevronRight, Sparkles } from "lucide-react";
 import beyzanurPortrait from "@/assets/beyzanur-portrait.jpeg";
 
 const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: number }) => (
@@ -95,9 +94,6 @@ const HeroSection = () => (
           <a href="#projeler" className="btn-primary px-8 py-4 flex items-center gap-2 text-sm">
             View My Projects <ChevronRight size={18} />
           </a>
-          <Link to="/cv" className="btn-secondary px-8 py-4 flex items-center gap-2 text-sm">
-            <Eye size={18} /> View CV
-          </Link>
         </motion.div>
 
         <motion.div
