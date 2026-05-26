@@ -1,14 +1,35 @@
 import { motion } from "framer-motion";
 import { Send, Github, Linkedin, Mail } from "lucide-react";
 import { useState, FormEvent } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    const payload = {
+      name: String(fd.get("name") || ""),
+      email: String(fd.get("email") || ""),
+      message: String(fd.get("message") || ""),
+    };
+    setLoading(true);
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", { body: payload });
+      if (error) throw error;
+      setSubmitted(true);
+      form.reset();
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Failed to send", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -45,25 +66,26 @@ const ContactSection = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Name</label>
-                <input type="text" className="form-input" placeholder="Your full name" required />
+                <input name="name" type="text" className="form-input" placeholder="Your full name" required />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Email</label>
-                <input type="email" className="form-input" placeholder="hello@example.com" required />
+                <input name="email" type="email" className="form-input" placeholder="hello@example.com" required />
               </div>
             </div>
             <div className="space-y-2">
               <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Message</label>
-              <textarea rows={4} className="form-input resize-none" placeholder="Tell me about your project..." required />
+              <textarea name="message" rows={4} className="form-input resize-none" placeholder="Tell me about your project..." required />
             </div>
             <motion.button
               type="submit"
-              className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-sm"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
+              disabled={loading}
+              className="w-full btn-primary py-4 flex items-center justify-center gap-2 text-sm disabled:opacity-60"
+              whileHover={{ scale: loading ? 1 : 1.01 }}
+              whileTap={{ scale: loading ? 1 : 0.98 }}
             >
-              {submitted ? "Sent ✓" : "Send"}
-              {!submitted && <Send size={16} />}
+              {loading ? "Sending..." : submitted ? "Sent ✓" : "Send"}
+              {!submitted && !loading && <Send size={16} />}
             </motion.button>
           </form>
 
