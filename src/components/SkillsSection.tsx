@@ -1,17 +1,23 @@
 import { motion } from "framer-motion";
-import { Code2, Layout, Server, Palette, GitBranch, Smartphone, Zap, Layers, Globe, Film } from "lucide-react";
+import { Code2, Layout, Server, Palette, GitBranch, Zap, Layers, Globe, Brain, Eye, Database, Sparkles, Cpu, FileSearch, Workflow, Cog } from "lucide-react";
 
 const skills = [
-  { name: "React", icon: Code2 },
+  { name: "C#", icon: Code2 },
+  { name: "ASP.NET", icon: Server },
   { name: "MVC", icon: Layers },
-  { name: "TypeScript", icon: Zap },
-  { name: "HTML / CSS", icon: Layout },
-  { name: "Tailwind CSS", icon: Palette },
-  { name: "Node.js", icon: Server },
-  { name: "Git", icon: GitBranch },
-  { name: "Responsive Design", icon: Smartphone },
-  { name: "Next.js", icon: Globe },
-  { name: "Framer Motion", icon: Film },
+  { name: "Web Development", icon: Globe },
+  { name: "Software Architecture", icon: Workflow },
+  { name: "Requirement Analysis", icon: FileSearch },
+  { name: "HTML", icon: Layout },
+  { name: "CSS", icon: Palette },
+  { name: "JavaScript", icon: Zap },
+  { name: "Python", icon: Code2 },
+  { name: "Computer Vision", icon: Eye },
+  { name: "YOLO (Ultralytics)", icon: Brain },
+  { name: "Data Annotation", icon: Sparkles },
+  { name: "Data Preprocessing", icon: Database },
+  { name: "Model Training", icon: Cpu },
+  { name: "AI Deployment Pipelines", icon: Cog },
 ];
 
 const SkillsSection = () => (
