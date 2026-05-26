@@ -25,12 +25,12 @@ const HeroSection = () => (
   <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[100vh] flex flex-col justify-center overflow-hidden">
     <div className="absolute inset-0 mesh-gradient pointer-events-none" />
     <div
-      className="absolute top-1/4 -left-32 w-96 h-96 opacity-[0.04] blur-3xl bg-white"
-      style={{ animation: "blob-morph 8s ease-in-out infinite" }}
+      className="absolute top-1/4 -left-32 w-96 h-96 opacity-40 blur-3xl"
+      style={{ background: "hsl(243 75% 59%)", animation: "blob-morph 8s ease-in-out infinite" }}
     />
     <div
-      className="absolute bottom-1/4 -right-32 w-80 h-80 opacity-[0.03] blur-3xl bg-white"
-      style={{ animation: "blob-morph 10s ease-in-out infinite reverse" }}
+      className="absolute bottom-1/4 -right-32 w-80 h-80 opacity-30 blur-3xl"
+      style={{ background: "hsl(250 85% 70%)", animation: "blob-morph 10s ease-in-out infinite reverse" }}
     />
 
     {[...Array(6)].map((_, i) => (
