@@ -34,6 +34,12 @@ const projects: Project[] = [
     link: "https://saybes.com/",
     image: fortisBlogImg,
   },
+  {
+    title: "Başçılar Gayrimenkul",
+    description: "Development of a modern, fully responsive real estate website for Başçılar Gayrimenkul showcasing property listings and services.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://bascilargayrimenkul.com/",
+  },
 ];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => (
