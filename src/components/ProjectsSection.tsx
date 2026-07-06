@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import topcuHoldingImg from "@/assets/topcu-holding.png";
 import basciKatlanirImg from "@/assets/basci-katlanir.png";
 import fortisBlogImg from "@/assets/fortis-blog.png";
+import bascilarGayrimenkulImg from "@/assets/bascilar-gayrimenkul.png";
 
 interface Project {
   title: string;
@@ -39,6 +40,7 @@ const projects: Project[] = [
     description: "Development of a modern, fully responsive real estate website for Başçılar Gayrimenkul showcasing property listings and services.",
     tags: ["HTML", "CSS", "JavaScript"],
     link: "https://bascilargayrimenkul.com/",
+    image: bascilarGayrimenkulImg,
   },
 ];
 
