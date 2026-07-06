@@ -21,7 +21,7 @@ const FloatingParticle = ({ delay, x, size }: { delay: number; x: number; size: 
 );
 
 const HeroSection = () => (
-  <section className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[100vh] flex flex-col justify-center overflow-hidden">
+  <section id="hakkimda" className="relative pt-32 pb-20 px-6 max-w-7xl mx-auto min-h-[100vh] flex flex-col justify-center overflow-hidden">
     <div className="absolute inset-0 mesh-gradient pointer-events-none" />
     <div
       className="absolute top-1/4 -left-32 w-96 h-96 opacity-40 blur-3xl"
